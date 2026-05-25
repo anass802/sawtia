@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react'
-import { aiParamsAPI } from '../api/client'
 
 const Ico = ({ n, s = 18, c = 'currentColor' }) => {
   const d = {

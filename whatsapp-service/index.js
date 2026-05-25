@@ -24,6 +24,7 @@ const sessions = {}
 
 async function notifyBack(event, data) {
     try {
+        console.log("SENDING TO LARAVEL:", { event, data })  
         await fetch(`${LARAVEL_URL}/${apiWhass_URL}`, {
             method: 'POST',
             headers: {
@@ -104,7 +105,7 @@ async function startSocket(userId) {
             if(msg.key.fromMe) continue
             if(msg.key.remoteJid==='status@broadcast') continue
             const from =msg.key.remoteJid
-            const senderPhone=from
+            const senderPhone = from
                 .replace('@s.whatsapp.net','')
                 .replace('@g.us','')
             const text=

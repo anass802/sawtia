@@ -77,64 +77,64 @@ const Icon = ({ name, size = 16, color = 'currentColor' }) => {
 
 // ─── NAV CONFIG ─────────────────────────────────────────────────────
 const navItems = [
-  { id: 'dashboard', label: 'Tableau de Bord', icon: 'grid' ,link:'' },
+  { id: 'dashboard', label: 'Tableau de Bord', icon: 'grid' ,link:'/comingsoon' },
   { id: 'whatsapp', label: 'WhatsApp Sync', icon: 'whatsapp', badge: 'NEW', badgeColor: '#25D366' ,link:'/whatss-appsync' },
-  { id: 'connexions', label: 'Connexions', icon: 'share2' ,link:'' },
-  { id: 'conversations', label: 'Conversations', icon: 'history' ,link:'' },
+  { id: 'connexions', label: 'Connexions', icon: 'share2' ,link:'/comingsoon' },
+  { id: 'conversations', label: 'Conversations', icon: 'history' ,link:'/comingsoon' },
   {
     label: 'Agents IA', icon: 'bot', children: [
-      { id: 'agent-basic', label: 'Agent Basique', badge: 'Nv 1', badgeColor: '#3b82f6' ,link:'' },
-      { id: 'agent-advanced', label: 'Agent Avancé', badge: 'Nv 2', badgeColor: '#a855f7' ,link:'' },
-      { id: 'agent-expert', label: 'Agent Expert', badge: 'Nv 3', badgeColor: '#f59e0b' ,link:'' },
+      { id: 'agent-basic', label: 'Agent Basique', badge: 'Nv 1', badgeColor: '#3b82f6' ,link:'/comingsoon' },
+      { id: 'agent-advanced', label: 'Agent Avancé', badge: 'Nv 2', badgeColor: '#a855f7' ,link:'/comingsoon' },
+      { id: 'agent-expert', label: 'Agent Expert', badge: 'Nv 3', badgeColor: '#f59e0b' ,link:'/comingsoon' },
     ]
   },
   { id: 'ai-params', label: 'Paramètres IA', icon: 'sliders', link:'' },
-  { id: 'campaigns', label: 'Campagnes', icon: 'megaphone', link:'' },
+  { id: 'campaigns', label: 'Campagnes', icon: 'megaphone', link:'/broadcast' },
   {
     label: 'Base de Connaissances', icon: 'database', children: [
-      { id: 'web-scanner', label: 'Scanner Web', link:'' },
-      { id: 'documents', label: 'Documents (PDF)', link:'' },
-      { id: 'articles', label: 'Articles & Textes', link:'' },
-      { id: 'data-sources', label: 'Data Sources', link:'' },
+      { id: 'web-scanner', label: 'Scanner Web', link:'/webscanner' },
+      { id: 'documents', label: 'Documents (PDF)', link:'/doc-indexed' },
+      { id: 'articles', label: 'Articles & Textes', link:'/comingsoon' },
+      { id: 'data-sources', label: 'Data Sources', link:'/comingsoon' },
     ]
   },
   {
     label: 'Connecteurs CRM', icon: 'plug', children: [
-      { id: 'immotech', label: 'My Immotech', link:'' },
-      { id: 'bitrix', label: 'Bitrix24', link:'' },
-      { id: 'autre-crm', label: 'Autre CRM', link:'' },
+      { id: 'immotech', label: 'My Immotech', link:'/comingsoon' },
+      { id: 'bitrix', label: 'Bitrix24', link:'/comingsoon' },
+      { id: 'autre-crm', label: 'Autre CRM', link:'/comingsoon' },
     ]
   },
   {
     label: 'E-commerce', icon: 'shopping-bag', children: [
-      { id: 'shopify', label: 'Shopify', link:'' },
-      { id: 'woocommerce', label: 'WooCommerce', link:'' },
-      { id: 'autre-store', label: 'Autre Store', link:'' },
+      { id: 'shopify', label: 'Shopify', link:'/comingsoon' },
+      { id: 'woocommerce', label: 'WooCommerce', link:'/comingsoon' },
+      { id: 'autre-store', label: 'Autre Store', link:'/comingsoon' },
     ]
   },
   {
     label: 'API TTS (Dev)', icon: 'code', children: [
-      { id: 'api-keys', label: 'Clés API', link:'' },
-      { id: 'documentation', label: 'Documentation', link:'' },
-      { id: 'recharge', label: 'Recharge', link:'' },
+      { id: 'api-keys', label: 'Clés API', link:'/comingsoon' },
+      { id: 'documentation', label: 'Documentation', link:'/comingsoon' },
+      { id: 'recharge', label: 'Recharge', link:'/comingsoon' },
     ]
   },
   {
     label: 'Facturation', icon: 'receipt', children: [
-      { id: 'mon-plan', label: 'Mon Plan', link:'' },
-      { id: 'profil-facturation', label: 'Profil Facturation', link:'' },
-      { id: 'solde-paiement', label: 'Solde & Paiement', link:'' },
-      { id: 'factures', label: 'Factures', link:'' },
+      { id: 'mon-plan', label: 'Mon Plan', link:'/comingsoon' },
+      { id: 'profil-facturation', label: 'Profil Facturation', link:'/comingsoon' },
+      { id: 'solde-paiement', label: 'Solde & Paiement', link:'/comingsoon' },
+      { id: 'factures', label: 'Factures', link:'/comingsoon' },
     ]
   },
   {
     label: 'Support & Aide', icon: 'help-circle', children: [
-      { id: 'videos', label: 'Vidéos Démos', link:'' },
-      { id: 'faq', label: 'FAQ', link:'' },
-      { id: 'tickets', label: 'Tickets', link:'' },
+      { id: 'videos', label: 'Vidéos Démos', link:'/comingsoon' },
+      { id: 'faq', label: 'FAQ', link:'/comingsoon' },
+      { id: 'tickets', label: 'Tickets', link:'/comingsoon' },
     ]
   },
-  { id: 'settings', label: 'Paramètres', icon: 'settings', link:'' },
+  { id: 'settings', label: 'Paramètres', icon: 'settings', link:'/comingsoon' },
 ]
   return (
     <div style={{ width: 240, minWidth: 240, height: '100vh', background: sidebarBg, borderRight: `1px solid ${border}`, display: 'flex', flexDirection: 'column', overflow: 'hidden' }}>
@@ -169,7 +169,7 @@ const navItems = [
                   {isExpanded && item.children.map(c => {
                     const isActive = activePage === c.id
                     return (
-                      <button key={c.id} onClick={() => {setActivePage(c.id)}} style={{
+                      <button key={c.id} onClick={() => {{setActivePage(c.id)} if(c.link){navigate(c.link)}}} style={{
                         width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'space-between',
                         padding: '7px 12px 7px 30px', background: isActive ? P : 'transparent',
                         color: isActive ? '#fff' : textMuted, border: 'none', borderRadius: 7,

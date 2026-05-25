@@ -28,7 +28,7 @@ return new class extends Migration
     {
         Schema::table('users', function (Blueprint $table) {
             $table->dropColumn([
-                'whatsapp_phone',
+                'whatsapp_number',
                 'whatsapp_status'
             ]);
         });
