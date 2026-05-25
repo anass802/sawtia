@@ -88,7 +88,7 @@ const navItems = [
       { id: 'agent-expert', label: 'Agent Expert', badge: 'Nv 3', badgeColor: '#f59e0b' ,link:'/comingsoon' },
     ]
   },
-  { id: 'ai-params', label: 'Paramètres IA', icon: 'sliders', link:'' },
+  { id: 'ai-params', label: 'Paramètres IA', icon: 'sliders', link:'/ai-parametre' },
   { id: 'campaigns', label: 'Campagnes', icon: 'megaphone', link:'/broadcast' },
   {
     label: 'Base de Connaissances', icon: 'database', children: [

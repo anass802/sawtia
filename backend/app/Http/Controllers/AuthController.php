@@ -40,6 +40,27 @@ class AuthController extends Controller
         ]);
 
     }
+    public function register(Request $request)
+    {
+        $request->validate([
+            'name'             => 'required|string|max:255',
+            'email'            => 'required|email|unique:users',
+            'password'         => 'required|string|min:6',
+        ]);
+
+        $user = User::create([
+            'name'             => $request->name,
+            'email'            => $request->email,
+            'password'         => $request->password,
+        ]);
+
+        $token = $user->createToken('auth_token')->plainTextToken;
+
+        return response()->json([
+            'user'  => $user,
+            'token' => $token,
+        ], 201);
+    }
     private function formatUser(User $user): array
     {
         return [

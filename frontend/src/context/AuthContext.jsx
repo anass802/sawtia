@@ -34,6 +34,24 @@ export function AuthProvider({ children }) {
             setLoading(false);
         }
     }, []);
+    const register = useCallback(async (name, email, password) => {
+    setLoading(true);
+    setError(null);
+    try {
+      const data = await authApi.register(name, email, password);
+      localStorage.setItem("token", data.token);
+      localStorage.setItem("user", JSON.stringify(data.user));
+      setToken(data.token);
+      setUser(data.user);
+      return { success: true };
+    } catch (err) {
+      const msg = err?.response?.data?.message || "Registration failed. Please try again.";
+      setError(msg);
+      return { success: false, message: msg };
+    } finally {
+      setLoading(false);
+    }
+  }, []);
 
     const logout = useCallback(async () => {
         setLoading(true);
@@ -53,7 +71,7 @@ export function AuthProvider({ children }) {
     const clearError = useCallback(() => setError(null), []);
 
     return (
-        <AuthContext.Provider value={{ user, token, loading, error, login, logout, clearError, isAuthenticated: !!token }}>
+        <AuthContext.Provider value={{ user, token, loading, error, login,register, logout, clearError, isAuthenticated: !!token }}>
             {children}
         </AuthContext.Provider>
     );

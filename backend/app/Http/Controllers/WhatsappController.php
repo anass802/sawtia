@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Log;
 use App\Services\AiService;
 class WhatsappController extends Controller
 {
-    private $nodeUrl = 'http://localhost:3001';
+    private $nodeUrl = 'http://node_whatsapp:3001';
 
     public function connect(Request $request){
         $userId=auth()->id();

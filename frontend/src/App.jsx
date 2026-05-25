@@ -13,9 +13,9 @@ const App = () => {
   return (
     
     <Routes>
-      <Route path="/auth" element={<AuthPage/>} />
+      <Route path="/" element={<AuthPage/>} />
       <Route element={<Sawtia/>}>
-        <Route path="/" element={<AIParameters/>} />
+        <Route path="/ai-parametre" element={<AIParameters/>} />
         <Route path="/whatss-appsync" element={<WhatsAppSync/>} />
         <Route path="/doc-indexed" element={<DocumentsPDF/>} />
         <Route path="/broadcast" element={<BroadcastPage/>}/>

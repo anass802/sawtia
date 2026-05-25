@@ -14,7 +14,7 @@ export default function LoginForm({ onSwitchToRegister }) {
     e.preventDefault();
     const res=await login(form.email, form.password);
     if(res.success){
-        navigate('/')
+        navigate('/comingsoon')
     }
   };
 

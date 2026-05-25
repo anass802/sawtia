@@ -1,9 +1,10 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { useAuth } from "../../context/AuthContext";
-// import { authApi } from "../../api/authApi";
+
 
 export default function RegisterForm({ onSwitchToLogin }) {
-  const { login, clearError } = useAuth();
+  const { register, clearError } = useAuth();
   const [form, setForm]       = useState({ name: "", email: "", password: "", password_confirmation: "" });
   const [showPw, setShowPw]   = useState(false);
   const [loading, setLoading] = useState(false);
@@ -11,31 +12,13 @@ export default function RegisterForm({ onSwitchToLogin }) {
 
   const set = (k) => (e) => { setError(null); clearError(); setForm(f => ({ ...f, [k]: e.target.value })); };
 
-//   const handleSubmit = async (e) => {
-//     e.preventDefault();
-//     if (form.password !== form.password_confirmation) {
-//       setError("Passwords do not match."); return;
-//     }
-//     setLoading(true);
-//     setError(null);
-//     try {
-//       // POST /auth/register → returns { token, user }
-//       const res = await fetch(`${import.meta.env.VITE_API_URL || "http://localhost:8000/api"}/auth/register`, {
-//         method: "POST",
-//         headers: { "Content-Type": "application/json", "Accept": "application/json" },
-//         body: JSON.stringify(form),
-//       });
-//       const data = await res.json();
-//       if (!res.ok) throw new Error(data.message || "Registration failed.");
-//       // Auto-login after register
-//       await login(form.email, form.password);
-//     } catch (err) {
-//       setError(err.message);
-//     } finally {
-//       setLoading(false);
-//     }
-//   };
-
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const res=await register(form.name,form.email, form.password);
+    if(res.success){
+        navigate('/')
+    }
+  };
   return (
     <form  className="flex flex-col gap-4">
       <div>
@@ -100,6 +83,7 @@ export default function RegisterForm({ onSwitchToLogin }) {
       )}
 
       <button
+        onClick={handleSubmit}
         type="submit" disabled={loading}
         className="w-full py-2.5 rounded-xl bg-violet-600 hover:bg-violet-500 disabled:opacity-60 disabled:cursor-not-allowed
                    text-white font-semibold text-sm transition flex items-center justify-center gap-2 mt-1"
@@ -117,7 +101,7 @@ export default function RegisterForm({ onSwitchToLogin }) {
 
       <p className="text-center text-sm text-gray-500">
         Already have an account?{" "}
-        <button type="button" onClick={onSwitchToLogin} className="text-violet-400 hover:text-violet-300 font-medium transition">
+        <button  type="button" onClick={onSwitchToLogin} className="text-violet-400 hover:text-violet-300 font-medium transition">
           Sign in
         </button>
       </p>
